@@ -55,6 +55,13 @@ function resetBoard() {
 }
 
 //changes click to true or false to enable or disable drawing
-document.querySelector("body").addEventListener("click", () => {
-  click = !click;
+document.querySelector("body").addEventListener("click", (e) => {
+  if (e.target.tagName != "BUTTON") {
+    click = !click;
+    if (click) {
+      document.querySelector(".mode").textContent = "Mode: Coloring";
+    } else {
+      document.querySelector(".mode").textContent = "Mode: Not Coloring";
+    }
+  }
 });

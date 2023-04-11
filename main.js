@@ -1,3 +1,5 @@
+let color = "black";
+
 //function to populate the board with a parameter of size to determine the size of the board
 function populateBoard(size) {
   //DOM element to access the board class
@@ -31,5 +33,10 @@ function changeSize(input){
 
 //function to change the color if the box we mouse over 
 function colorSquare(){
-  this.style.backgroundColor = "black";
+  this.style.backgroundColor = color;
+}
+
+//function to change color on button click
+function changeColor(choice){
+  color = choice;
 }

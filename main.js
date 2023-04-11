@@ -26,9 +26,10 @@ populateBoard(16); //function call set the size of the board
 //change the size of the board using input text
 function changeSize(input){
   if(input >= 2 && input <= 100){
+    document.querySelector(".error").style.display = "none";
     populateBoard(input)
   } else{
-    console.log("Invalid input")
+    document.querySelector(".error").style.display = "flex";
   }
 }
 

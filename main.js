@@ -12,9 +12,7 @@ function populateBoard(size) {
     let square = document.createElement("div");
 
     //event listener to leave a trail of where the mouse moved
-    square.addEventListener('mouseover', () => {
-      square.style.backgroundColor = 'black'
-    })
+    square.addEventListener('mouseover', colorSquare)
     square.style.backgroundColor = "white";
     board.insertAdjacentElement("beforeend", square);
   }
@@ -29,4 +27,9 @@ function changeSize(input){
   } else{
     console.log("Invalid input")
   }
+}
+
+//function to change the color if the box we mouse over 
+function colorSquare(){
+  this.style.backgroundColor = "black";
 }

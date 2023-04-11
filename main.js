@@ -1,4 +1,5 @@
 let color = "black";
+let click = true;
 
 //function to populate the board with a parameter of size to determine the size of the board
 function populateBoard(size) {
@@ -33,10 +34,12 @@ function changeSize(input){
 
 //function to change the color if the box we mouse over 
 function colorSquare(){
-  if(color === "random"){
-    this.style.backgroundColor = `hsl(${Math.random() * 300}, 100%, 50%)`
-  } else {
-    this.style.backgroundColor = color;
+  if(click){
+    if(color === "random"){
+      this.style.backgroundColor = `hsl(${Math.random() * 300}, 100%, 50%)`
+    } else {
+      this.style.backgroundColor = color;
+    }
   }
 }
 
@@ -50,3 +53,8 @@ function resetBoard() {
   let squares = board.querySelectorAll("div");
   squares.forEach((div) => div.style.backgroundColor = 'white');
 }
+
+//changes click to true or false to enable or disable drawing
+document.querySelector("body").addEventListener("click", () => {
+  click = !click;
+});

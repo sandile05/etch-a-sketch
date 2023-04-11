@@ -33,7 +33,11 @@ function changeSize(input){
 
 //function to change the color if the box we mouse over 
 function colorSquare(){
-  this.style.backgroundColor = color;
+  if(color === "random"){
+    this.style.backgroundColor = `hsl(${Math.random() * 300}, 100%, 50%)`
+  } else {
+    this.style.backgroundColor = color;
+  }
 }
 
 //function to change color on button click
